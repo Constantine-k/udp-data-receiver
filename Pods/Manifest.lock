@@ -1,16 +1,26 @@
 PODS:
   - CocoaAsyncSocket (7.6.3)
+  - Realm (3.16.1):
+    - Realm/Headers (= 3.16.1)
+  - Realm/Headers (3.16.1)
+  - RealmSwift (3.16.1):
+    - Realm (= 3.16.1)
 
 DEPENDENCIES:
   - CocoaAsyncSocket
+  - RealmSwift
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - CocoaAsyncSocket
+    - Realm
+    - RealmSwift
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: eafaa68a7e0ec99ead0a7b35015e0bf25d2c8987
+  Realm: 601cacc51d8be3b17a377ef787be0f6ee0e76cf1
+  RealmSwift: 486f2e09d5a8ccff63ed66e48d0846b111deb5e5
 
-PODFILE CHECKSUM: 151f068dea7753ec0b57d33415678b211742af53
+PODFILE CHECKSUM: 2362dd5f0ff7592443e1a0f454ef76440107fca4
 
 COCOAPODS: 1.7.1
