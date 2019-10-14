@@ -12,20 +12,20 @@ import CocoaAsyncSocket
 final class DataReceiveManager: NSObject, GCDAsyncUdpSocketDelegate {
 
     var didReceiveDataAction: ((_ data: Data, _ address: Data) -> Void)?
+    var socketQueue = DispatchQueue.main {
+        didSet {
+            socket.setDelegateQueue(socketQueue)
+        }
+    }
 
     private let serverIP = "127.0.0.1"
     private let port: UInt16 = 12345
 
-    private var socket: GCDAsyncUdpSocket!
-
-    override init() {
-        super.init()
-        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main)
-    }
+    private lazy var socket = { GCDAsyncUdpSocket(delegate: self, delegateQueue: DispatchQueue.main) }()
 
     convenience init(delegateQueue: DispatchQueue) {
         self.init()
-        socket = GCDAsyncUdpSocket(delegate: self, delegateQueue: delegateQueue)
+        socketQueue = delegateQueue
     }
 
     func beginReceiving() {
