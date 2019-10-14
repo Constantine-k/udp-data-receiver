@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,7 @@
 		B53602A2234AAEA7008A8B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B53602A0234AAEA7008A8B99 /* LaunchScreen.storyboard */; };
 		B53602AD234AAEA7008A8B99 /* ServerDataReceiverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53602AC234AAEA7008A8B99 /* ServerDataReceiverTests.swift */; };
 		B53602B8234AB0FA008A8B99 /* DataReceiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53602B7234AB0FA008A8B99 /* DataReceiveManager.swift */; };
+		B551968F23550D89001A3F8E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551968E23550D89001A3F8E /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		B53602AC234AAEA7008A8B99 /* ServerDataReceiverTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerDataReceiverTests.swift; sourceTree = "<group>"; };
 		B53602AE234AAEA7008A8B99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B53602B7234AB0FA008A8B99 /* DataReceiveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceiveManager.swift; sourceTree = "<group>"; };
+		B551968E23550D89001A3F8E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		E215C9BCDE59E2275E5ED11A /* Pods_ServerDataReceiver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServerDataReceiver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -71,7 +73,6 @@
 				1052707A7103998AB7368E1F /* Pods-ServerDataReceiver.debug.xcconfig */,
 				341D1210B88E4EDB2B792395 /* Pods-ServerDataReceiver.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -109,6 +110,7 @@
 				B5360295234AAEA3008A8B99 /* AppDelegate.swift */,
 				B5360297234AAEA3008A8B99 /* SceneDelegate.swift */,
 				B5360299234AAEA3008A8B99 /* ViewController.swift */,
+				B551968E23550D89001A3F8E /* Message.swift */,
 				B53602B7234AB0FA008A8B99 /* DataReceiveManager.swift */,
 				B536029B234AAEA4008A8B99 /* Main.storyboard */,
 				B536029E234AAEA7008A8B99 /* Assets.xcassets */,
@@ -274,6 +276,7 @@
 			files = (
 				B536029A234AAEA3008A8B99 /* ViewController.swift in Sources */,
 				B5360296234AAEA3008A8B99 /* AppDelegate.swift in Sources */,
+				B551968F23550D89001A3F8E /* Message.swift in Sources */,
 				B5360298234AAEA3008A8B99 /* SceneDelegate.swift in Sources */,
 				B53602B8234AB0FA008A8B99 /* DataReceiveManager.swift in Sources */,
 			);

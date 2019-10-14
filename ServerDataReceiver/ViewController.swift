@@ -10,11 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let dataReceiveManager = DataReceiveManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        dataReceiveManager.didReceiveDataAction = { data, _ in
+            if let message = Message(jsonData: data) {
+                print("Received message:\n-timestamp: \(message.timestamp)\n-text: \(message.text)")
+            }
+        }
+        dataReceiveManager.beginReceiving()
     }
 
-
 }
-
