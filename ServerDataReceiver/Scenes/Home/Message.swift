@@ -7,26 +7,31 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Message: Codable {
-    let timestamp: Double
-    let text: String
+class Message: Object {
+    @objc dynamic var timestamp: Double = 0.0
+    @objc dynamic var text: String = ""
 
-    enum CodingKeys: String, CodingKey {
-        case timestamp
-        case text = "message"
-    }
-}
-
-extension Message {
-    init?(jsonData: Data) {
+    convenience init?(jsonData: Data) {
         do {
-            let message = try JSONDecoder().decode(Message.self, from: jsonData)
+            let message = try JSONDecoder().decode(MessageStruct.self, from: jsonData)
+            self.init()
             timestamp = message.timestamp
             text = message.text
         } catch {
             print(error.localizedDescription)
             return nil
         }
+    }
+}
+
+fileprivate struct MessageStruct: Codable {
+    let timestamp: Double
+    let text: String
+
+    enum CodingKeys: String, CodingKey {
+        case timestamp
+        case text = "message"
     }
 }

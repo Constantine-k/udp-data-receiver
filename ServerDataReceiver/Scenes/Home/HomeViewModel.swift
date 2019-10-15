@@ -8,13 +8,17 @@
 
 import Foundation
 
-protocol HomeView: class {}
+protocol HomeView: class {
+    func reloadData()
+}
 
 class HomeViewModel {
 
     weak var view: HomeView?
 
     let dataReceiveManager = DataReceiveManager() // Set queue (!)
+
+    var messages = [Message]()
 
     convenience init(view: HomeView) {
         self.init()
@@ -24,9 +28,11 @@ class HomeViewModel {
     private init() {}
 
     func startReceivingMessages() {
-        dataReceiveManager.didReceiveDataAction = { data, _ in
+        dataReceiveManager.didReceiveDataAction = { [weak self] data, _ in
             if let message = Message(jsonData: data) {
-                print("Received message:\n-timestamp: \(message.timestamp)\n-text: \(message.text)")
+                self?.messages.append(message)
+                self?.messages.sort { $0.timestamp > $1.timestamp }
+                self?.view?.reloadData()
             }
         }
         dataReceiveManager.beginReceiving()
