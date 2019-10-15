@@ -18,6 +18,9 @@
 		B53602B8234AB0FA008A8B99 /* DataReceiveManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B53602B7234AB0FA008A8B99 /* DataReceiveManager.swift */; };
 		B551968F23550D89001A3F8E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B551968E23550D89001A3F8E /* Message.swift */; };
 		B55196962355283D001A3F8E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55196952355283D001A3F8E /* HomeViewModel.swift */; };
+		B5863356235550A9004E1ADB /* MessageDetailsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5863355235550A9004E1ADB /* MessageDetailsViewController.storyboard */; };
+		B58633582355527E004E1ADB /* MessageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58633572355527E004E1ADB /* MessageDetailsViewController.swift */; };
+		B5FF8C38235557CE00FFB8BA /* MessageDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FF8C37235557CE00FFB8BA /* MessageDetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		B53602B7234AB0FA008A8B99 /* DataReceiveManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataReceiveManager.swift; sourceTree = "<group>"; };
 		B551968E23550D89001A3F8E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B55196952355283D001A3F8E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		B5863355235550A9004E1ADB /* MessageDetailsViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MessageDetailsViewController.storyboard; sourceTree = "<group>"; };
+		B58633572355527E004E1ADB /* MessageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailsViewController.swift; sourceTree = "<group>"; };
+		B5FF8C37235557CE00FFB8BA /* MessageDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailsModel.swift; sourceTree = "<group>"; };
 		E215C9BCDE59E2275E5ED11A /* Pods_ServerDataReceiver.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ServerDataReceiver.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,12 +170,23 @@
 		B551969423552658001A3F8E /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B586335923555286004E1ADB /* MessageDetails */,
 				B551968E23550D89001A3F8E /* Message.swift */,
 				B5360299234AAEA3008A8B99 /* HomeViewController.swift */,
 				B55196952355283D001A3F8E /* HomeViewModel.swift */,
 				B536029B234AAEA4008A8B99 /* HomeViewController.storyboard */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		B586335923555286004E1ADB /* MessageDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B5FF8C37235557CE00FFB8BA /* MessageDetailsModel.swift */,
+				B58633572355527E004E1ADB /* MessageDetailsViewController.swift */,
+				B5863355235550A9004E1ADB /* MessageDetailsViewController.storyboard */,
+			);
+			path = MessageDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5863356235550A9004E1ADB /* MessageDetailsViewController.storyboard in Resources */,
 				B53602A2234AAEA7008A8B99 /* LaunchScreen.storyboard in Resources */,
 				B536029F234AAEA7008A8B99 /* Assets.xcassets in Resources */,
 				B536029D234AAEA4008A8B99 /* HomeViewController.storyboard in Resources */,
@@ -317,12 +335,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FF8C38235557CE00FFB8BA /* MessageDetailsModel.swift in Sources */,
 				B536029A234AAEA3008A8B99 /* HomeViewController.swift in Sources */,
 				B55196962355283D001A3F8E /* HomeViewModel.swift in Sources */,
 				B5360296234AAEA3008A8B99 /* AppDelegate.swift in Sources */,
 				B551968F23550D89001A3F8E /* Message.swift in Sources */,
 				B5360298234AAEA3008A8B99 /* SceneDelegate.swift in Sources */,
 				B53602B8234AB0FA008A8B99 /* DataReceiveManager.swift in Sources */,
+				B58633582355527E004E1ADB /* MessageDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

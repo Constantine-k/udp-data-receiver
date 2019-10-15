@@ -23,7 +23,7 @@ class HomeViewModel {
 
     private weak var view: HomeView?
     private lazy var realm = { try! Realm() }()
-    private let dataReceiveManager = DataReceiveManager() // Set queue (!)
+    private let dataReceiveManager = DataReceiveManager(delegateQueue: DispatchQueue.global(qos: .userInitiated))
 
     convenience init(view: HomeView) {
         self.init()

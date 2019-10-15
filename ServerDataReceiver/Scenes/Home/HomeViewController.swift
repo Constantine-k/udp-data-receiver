@@ -44,5 +44,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard viewModel.messages.count > indexPath.row else { return }
+        showMessageDetails(message: viewModel.messages[indexPath.row])
+    }
+}
+
+// MARK: - Private
+
+private extension HomeViewController {
+    func showMessageDetails(message: Message) {
+        if let messageDetailsViewController = UIStoryboard(name: "MessageDetailsViewController", bundle: nil)
+            .instantiateInitialViewController() as? MessageDetailsViewController {
+
+            messageDetailsViewController.model = MessageDetailsModel(message: message)
+            present(messageDetailsViewController, animated: true)
+        }
     }
 }
