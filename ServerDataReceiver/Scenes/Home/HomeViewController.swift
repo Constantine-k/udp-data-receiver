@@ -17,6 +17,7 @@ final class HomeViewController: UIViewController, HomeView {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        viewModel.fetchSavedMessages()
         viewModel.startReceivingMessages()
     }
 
@@ -25,6 +26,8 @@ final class HomeViewController: UIViewController, HomeView {
     }
 
 }
+
+// MARK: - UITableViewDataSource, UITableViewDelegate
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

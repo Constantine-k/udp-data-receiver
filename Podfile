@@ -4,5 +4,5 @@ target 'ServerDataReceiver' do
   use_frameworks!
 
   pod 'CocoaAsyncSocket'
-  pod 'RealmSwift'
+  pod 'RealmSwift', '~> 3.19.0'
 end

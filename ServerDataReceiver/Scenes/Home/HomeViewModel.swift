@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol HomeView: class {
     func reloadData()
@@ -14,11 +15,15 @@ protocol HomeView: class {
 
 class HomeViewModel {
 
-    weak var view: HomeView?
+    var messages = [Message]() {
+        didSet {
+            messages = messages.sorted { $0.timestamp > $1.timestamp }
+        }
+    }
 
-    let dataReceiveManager = DataReceiveManager() // Set queue (!)
-
-    var messages = [Message]()
+    private weak var view: HomeView?
+    private lazy var realm = { try! Realm() }()
+    private let dataReceiveManager = DataReceiveManager() // Set queue (!)
 
     convenience init(view: HomeView) {
         self.init()
@@ -31,11 +36,21 @@ class HomeViewModel {
         dataReceiveManager.didReceiveDataAction = { [weak self] data, _ in
             if let message = Message(jsonData: data) {
                 self?.messages.append(message)
-                self?.messages.sort { $0.timestamp > $1.timestamp }
                 self?.view?.reloadData()
+
+                try! self?.realm.write {
+                    self?.realm.add(message)
+                }
             }
         }
         dataReceiveManager.beginReceiving()
+    }
+
+    func fetchSavedMessages() {
+        let messagesResults = realm.objects(Message.self)
+        let messagesArray = Array(messagesResults)
+
+        messages = messages.isEmpty ? messagesArray : messages + messagesArray
     }
 
 }
